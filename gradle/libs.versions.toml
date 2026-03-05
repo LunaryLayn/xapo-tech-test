@@ -15,6 +15,10 @@ navigationCompose = "2.8.2"
 uiTextGoogleFonts = "1.9.2"
 retrofit = "2.9.0"
 okhttpLogging = "4.9.3"
+coil = "2.6.0"
+lottie = "6.4.0"
+paging = "3.2.1"
+pagingCommon = "3.4.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -44,6 +48,18 @@ serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serializ
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 retrofit-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
 okhttp-logging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpLogging" }
+
+#Coil
+coil = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+#Lottie
+lottie = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
+
+#Paging
+paging-compose = { group = "androidx.paging", name = "paging-compose", version.ref = "paging" }
+paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
+androidx-paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "pagingCommon" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

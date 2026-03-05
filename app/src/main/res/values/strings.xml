@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">DemoAppOpen</string>
+    <string name="onboarding_title">Welcome to\nMobile Test</string>
+    <string name="onboarding_description">Mobile Test for Xapo Bank</string>
+    <string name="onboarding_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis arcu convallis, tincidunt enim nec, luctus nunc.</string>
+    <string name="onboarding_button_text">Enter the app</string>
+    <string name="onboarding_privacy_text">Privacy Policy and Terms of Use</string>
+    <string name="search">Search...</string>
+    <string name="retry">Try again</string>
+    <string name="error">An error has occurred connecting to GitHub.\nProbably you exceeded the API rate.</string>
+    <string name="empty">No results found for your query.</string>
 </resources>

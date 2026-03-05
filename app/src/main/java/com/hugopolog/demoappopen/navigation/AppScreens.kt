@@ -6,5 +6,9 @@ import kotlinx.serialization.Serializable
 sealed interface AppScreens {
 
     @Serializable
-    data object MainScreen: AppScreens
+    data object MainScreen : AppScreens
+    @Serializable
+    data class DetailScreen(val owner: String, val repo: String) : AppScreens
+    @Serializable
+    data object OnboardingScreen : AppScreens
 }

@@ -52,10 +52,10 @@ dependencies {
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
 
-    // 🚀 Navigation Compose
+
     implementation(libs.androidx.navigation.compose)
 
-    // 🔥 Hilt
+
     implementation(libs.hilt.android)
     implementation(libs.androidx.compose.ui.text.google.fonts)
     kapt(libs.hilt.compiler)
@@ -74,6 +74,14 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.okhttp.logging)
+
+    implementation(libs.coil)
+    implementation(libs.lottie)
+
+    implementation(libs.paging.compose)
+    implementation(libs.paging.runtime)
+
+
 
 
 }

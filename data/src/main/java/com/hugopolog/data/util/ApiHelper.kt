@@ -1,6 +1,5 @@
 package com.hugopolog.data.util
 
-import android.util.Log
 import com.google.gson.JsonParseException
 import com.hugopolog.domain.entities.config.error.DataError
 import com.hugopolog.domain.entities.config.error.DataResult
@@ -29,8 +28,7 @@ object ApiHelper {
                     DataResult.Error(DataError.Generic.NoData)
                 }
             } else {
-                // 👇 primero intento con errorMapper, si no lo reconoce, uso genéricos
-                val custom = errorMapper(response.code()) // Mapeo específico del endpoint
+                val custom = errorMapper(response.code())
                 val error = when (custom) {
                     DataError.Generic.UnknownError -> when (response.code()) {
                         400 -> DataError.Generic.BadRequest
@@ -46,16 +44,13 @@ object ApiHelper {
                 }
                 DataResult.Error(error)
             }
-        }
-        catch (e: CancellationException) {
-            Log.d("DataUtil", "safeApiCall: coroutine cancelada -> ${e.message}")
+        } catch (e: CancellationException) {
             return DataResult.Error(DataError.Generic.Canceled)
-        }
-        catch (e: IOException) {
+        } catch (e: IOException) {
             DataResult.Error(DataError.Generic.NetworkError)
         } catch (_: TimeoutException) {
             DataResult.Error(DataError.Generic.Timeout)
-        } catch (e: JsonParseException) { // Gson / Moshi parsing error
+        } catch (e: JsonParseException) {
             DataResult.Error(DataError.Generic.DeserializationError)
         } catch (e: Exception) {
             DataResult.Error(DataError.Generic.UnknownError)

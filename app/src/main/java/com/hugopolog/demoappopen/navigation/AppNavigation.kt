@@ -6,7 +6,10 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import androidx.navigation.toRoute
+import com.hugopolog.demoappopen.ui.feature.detail.DetailScreen
 import com.hugopolog.demoappopen.ui.feature.main.MainScreen
+import com.hugopolog.demoappopen.ui.feature.onboarding.OnboardingScreen
 
 @Composable
 fun AppNavigation(
@@ -34,8 +37,20 @@ fun AppNavigation(
     }
 
     NavHost(navController = navController, startDestination = navigator.startDestination) {
+        composable<AppScreens.OnboardingScreen> {
+            OnboardingScreen()
+        }
         composable<AppScreens.MainScreen> {
             MainScreen()
+        }
+        composable<AppScreens.DetailScreen> { backStackEntry ->
+
+            val args = backStackEntry.toRoute<AppScreens.DetailScreen>()
+
+            DetailScreen(
+                ownerId = args.owner,
+                repositoryId = args.repo
+            )
         }
     }
 }

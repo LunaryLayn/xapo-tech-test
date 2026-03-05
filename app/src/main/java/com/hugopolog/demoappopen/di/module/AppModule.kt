@@ -39,7 +39,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideNavigator(): Navigator {
-        return DefaultNavigator(startDestination = AppScreens.MainScreen)
+        return DefaultNavigator(startDestination = AppScreens.OnboardingScreen)
     }
 
     @Singleton
